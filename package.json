@@ -1,6 +1,6 @@
 {
   "name": "@ngx-utils/cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Service for transfer cached data from server",
   "keywords": [
     "angular",
@@ -9,7 +9,6 @@
     "angular universal",
     "cahce"
   ],
-  "author": "Anton Barada",
   "main": "bundles/cache.umd.min.js",
   "module": "index.js",
   "typings": "index.d.ts",
@@ -46,6 +45,7 @@
     "uglify-js": "^3.0.18",
     "zone.js": "^0.8.4"
   },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/ngx-utils/cache"
@@ -54,5 +54,6 @@
   "bugs": {
     "url": "https://github.com/ngx-utils/cache/issues"
   },
+  "author": "Anton Barada",
   "license": "MIT"
 }
