@@ -15,6 +15,9 @@
       "@angular/common": [
         "node_modules/@angular/common"
       ],
+      "@angular/platform-server": [
+        "@angular/platform-server"
+      ],
       "rxjs/*": [
         "node_modules/rxjs/*"
       ]
