@@ -1,18 +1,22 @@
-import { Inject, Injectable, Injector, PLATFORM_ID, RendererFactory2, ViewEncapsulation } from '@angular/core';
+import {
+  Inject, Injectable, InjectionToken, Injector, PLATFORM_ID, RendererFactory2,
+  ViewEncapsulation
+} from '@angular/core';
 import { PlatformState } from '@angular/platform-server';
 import { isPlatformBrowser } from '@angular/common';
 
+export const APP_CACHE_KEY = new InjectionToken('APP_CACHE_KEY');
+
 @Injectable()
 export class CacheService {
-  static STATE_CACHE_KEY = 'STATE_CACHE';
-
   private cache: { [key: string]: any } = {};
 
   constructor(@Inject(PLATFORM_ID) private platformId: any,
+              @Inject(APP_CACHE_KEY) private appCacheKey: string,
               private injector: Injector,
               private rendererFactory: RendererFactory2) {
     if (isPlatformBrowser(this.platformId)) {
-      const serverCache = rehydrateCache(this.cache);
+      const serverCache = rehydrateCache(appCacheKey, this.cache);
       this.rehydrate(serverCache);
     }
   }
@@ -77,7 +81,7 @@ export class CacheService {
       }
 
       const script = renderer.createElement('script');
-      renderer.setValue(script, `window['${CacheService.STATE_CACHE_KEY}'] = ${state}`);
+      renderer.setValue(script, `window['${this.appCacheKey}'] = ${state}`);
       renderer.appendChild(head, script);
     } catch (e) {
       console.error(e);
@@ -85,12 +89,12 @@ export class CacheService {
   }
 }
 
-export function rehydrateCache(defaultValue: { [key: string]: any }): { [key: string]: any } {
+export function rehydrateCache(appCacheKey: string, defaultValue: { [key: string]: any }): { [key: string]: any } {
   const win: any = window;
-  if (win[CacheService.STATE_CACHE_KEY]) {
+  if (win[appCacheKey]) {
     let serverCache = defaultValue;
     try {
-      serverCache = JSON.parse(JSON.stringify(win[CacheService.STATE_CACHE_KEY]));
+      serverCache = JSON.parse(JSON.stringify(win[appCacheKey]));
       if (typeof serverCache !== typeof defaultValue) {
         serverCache = defaultValue;
       }
