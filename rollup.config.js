@@ -7,6 +7,7 @@ export default {
   globals: {
     '@angular/core': 'ng.core',
     '@angular/common': 'ng.common',
+    '@angular/platform-server': 'ng.platformServer',
     'rxjs/Observable': 'Rx'
   }
 }
