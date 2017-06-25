@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40ngx-utils%2Fcache.svg)](https://badge.fury.io/js/%40ngx-utils%2Fcache) [![npm downloads](https://img.shields.io/npm/dm/@ngx-utils/cache.svg)](https://www.npmjs.com/package/@ngx-utils/cache)
 
-Service for transfer cached data from server
+Service for transfer cached data from server (example [@ngx-utils/universal-starter](https://github.com/ngx-utils/universal-starter))
 
 ## Table of contents:
 - [Prerequisites](#prerequisites)
