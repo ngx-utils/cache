@@ -2,7 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/%40ngx-utils%2Fcache.svg)](https://badge.fury.io/js/%40ngx-utils%2Fcache) [![npm downloads](https://img.shields.io/npm/dm/@ngx-utils/cache.svg)](https://www.npmjs.com/package/@ngx-utils/cache)
 
-Service for transfer cached data from server (example [@ngx-utils/universal-starter](https://github.com/ngx-utils/universal-starter))
+Service for transfer cached data from server
+
+Example in [@ngx-utils/universal-starter](https://github.com/ngx-utils/universal-starter/blob/master/src/app/auth-http.service.ts#L19) shows the way in which CacheService is used to cached all requests performed on server side and get cahched data on client side.
 
 ## Table of contents:
 - [Prerequisites](#prerequisites)
@@ -102,7 +104,7 @@ By default this key is ```__APP_CACHE__``` and it used for create global variabl
 
 ## Example of usage
 
-Following example shows how to cache all `GET` requests performed on server side and don't send second requests in browser but get it from cached data.
+Following example shows how to cache all `GET` requests, performed on server side, and get cached data in browser (and don't send requests second time).
 
 First of all we need create wrap for `Http` service:
 ```ts
