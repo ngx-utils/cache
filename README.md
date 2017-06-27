@@ -4,7 +4,7 @@
 
 Service for transfer cached data from server
 
-Example in [@ngx-utils/universal-starter](https://github.com/ngx-utils/universal-starter/blob/master/src/app/auth-http.service.ts#L19) shows the way in which CacheService is used to cached all requests performed on server side and get cahched data on client side.
+Example in [@ngx-utils/universal-starter](https://github.com/ngx-utils/universal-starter/blob/master/src/app/auth-http.service.ts#L19) shows the way in which `CacheService` is used to cached all requests performed on server side and get cahched data on client side.
 
 ## Table of contents:
 - [Prerequisites](#prerequisites)
