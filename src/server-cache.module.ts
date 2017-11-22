@@ -32,8 +32,10 @@ export function injectCacheFactory(appRef: ApplicationRef,
             data: {}
           });
 
-          const html: any = Array.from(document.children).find((child: any) => child.name === 'html');
-          const head = Array.from(html.children).find((child: any) => child.name === 'head');
+          const html: any = Array.from(document.children || document.childNodes)
+            .find((child: any) => (child.name || child.localName) === 'html');
+          const head = Array.from(html.children || html.childNodes)
+            .find((child: any) => (child.name || child.localName) === 'head');
 
           if (!head) {
             throw new Error('<head> not found in the document');
