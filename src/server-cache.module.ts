@@ -32,8 +32,13 @@ export function injectCacheFactory(appRef: ApplicationRef,
             data: {}
           });
 
-          const html: any = Array.from(document.children || document.childNodes)
-            .find((child: any) => (child.name || child.localName) === 'html');
+          let html: any;
+          if (document.documentElement) {
+            html = document.documentElement;
+          } else {
+            html = Array.from(document.children || document.childNodes)
+             .find((child: any) => (child.name || child.localName) === 'html');
+          }
           const head = Array.from(html.children || html.childNodes)
             .find((child: any) => (child.name || child.localName) === 'head');
 
