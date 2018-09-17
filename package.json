@@ -1,11 +1,11 @@
 {
   "name": "@ngx-utils/cache",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "description": "Service for transfer cached data from server",
   "keywords": [
     "angular",
-    "angular4",
-    "angular 4",
+    "angular6",
+    "angular 6",
     "angular universal",
     "cahce"
   ],
@@ -25,35 +25,29 @@
     "release": "npm run build && cd ./release && npm publish"
   },
   "peerDependencies": {
-    "@angular/animations": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/http": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "@angular/platform-server": "^5.0.0",
     "reflect-metadata": "^0.1.0",
-    "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@angular/animations": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/http": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "@angular/platform-server": "^5.0.0",
+    "@angular/animations": "^6.1.7",
+    "@angular/common": "^6.1.7",
+    "@angular/compiler": "^6.1.7",
+    "@angular/compiler-cli": "^6.1.7",
+    "@angular/core": "^6.1.7",
+    "@angular/http": "^6.1.7",
+    "@angular/platform-browser": "^6.1.7",
+    "@angular/platform-server": "^6.1.7",
     "cpy-cli": "^1.0.1",
     "rimraf": "^2.6.1",
     "rollup": "^0.43.0",
-    "rxjs": "^5.5.6",
-    "typescript": "~2.5.3",
+    "rxjs": "^6.3.2",
+    "typescript": "^2.9.0",
     "uglify-js": "^3.0.18",
     "zone.js": "^0.8.19"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@angular/platform-browser-dynamic": "^6.1.7"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ngx-utils/cache"
